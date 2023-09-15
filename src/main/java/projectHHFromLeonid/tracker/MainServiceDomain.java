@@ -16,13 +16,12 @@ public class MainServiceDomain {
 
     public void downloadAndSaveVacancies(){
         RestTemplate restTemplate = new RestTemplate();
-        MainServiceDomain mainServiceDomain = restTemplate.getForObject("https://api.hh.ru/vacancies", MainServiceDomain.class);
+        String resourceUrl
+                = "https://api.hh.ru/vacancies";
       //  ArrayList<String> allVacancies = new ArrayList<>();
 
-        String fooResourceUrl
-                = "http://localhost:8080/spring-rest/foos";
         ResponseEntity<List> response
-                = restTemplate.getForEntity(fooResourceUrl, List.class);
+                = restTemplate.getForEntity(resourceUrl, List.class);
         System.out.println(response);
 
 
